@@ -42,6 +42,7 @@ public:
         return static_cast<T*>(ptr);
     }
 
+
     void deallocate(T* p, std::size_t) noexcept {
 #if defined(_MSC_VER)
         _aligned_free(p);
