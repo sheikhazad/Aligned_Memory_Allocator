@@ -8,6 +8,7 @@
 #include <vector>
 #include <memory> // For std::allocator_traits
 #include <limits>
+#include <new>
 
 // Cache line size
 #ifndef hardware_destructive_interference_size
