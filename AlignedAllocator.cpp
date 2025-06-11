@@ -49,6 +49,8 @@ public:
     using value_type = T;              // Type of allocated elements
     using pointer = T*;                // Pointer to allocated memory
     using size_type = std::size_t;     // Type for size parameters
+
+    //All instances of this allocator are considered equal — so memory can be shared between them safely
     using is_always_equal = std::true_type;  // Stateless allocator (C++17)
 
     /**
