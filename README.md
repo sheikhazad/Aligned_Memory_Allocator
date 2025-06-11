@@ -16,7 +16,7 @@ Cache-line aligned allocator to prevent false sharing
    - `deallocate()` is `noexcept`.
 
 4. **Convenience Alias**:
-   - `AlignedVector<T>` provides a clean way to create aligned vectors.
+   -Aliases for STL containers are provided. E.g. `AlignedVector<T>` provides a clean way to create aligned vectors.
 
 ### Important Notes:
 1. **No `alignas` Needed**:
