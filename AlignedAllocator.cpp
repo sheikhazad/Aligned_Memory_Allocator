@@ -9,6 +9,13 @@
 #include <memory> // For std::allocator_traits
 #include <limits>
 
+// Cache line size
+#ifndef hardware_destructive_interference_size
+    #define hardware_destructive_interference_size 64
+#endif
+
+constexpr size_t CACHE_LINE_SIZE = hardware_destructive_interference_size;
+
 template<typename T, std::size_t Alignment = CACHE_LINE_SIZE>
 class AlignedAllocator {
 public:
