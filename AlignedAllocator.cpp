@@ -56,10 +56,18 @@ public:
     /**
      * Rebinds the allocator to another type U.
      * Required for STL containers that allocate internal node types.
+     * 
+     * C++ containers like std::vector<T> sometimes internally need to allocate a different type — not just T, but maybe T*, or std::pair<const T, U>, or void.
+     * 
+     * For e.g. If we already have: 
+     // AlignedAllocator<int, 64> myAllocator;
+     //Then myAllocator::rebind<double>::other is:
+     //AlignedAllocator<double, 64>
+     * Same alignment, but now allocates for double instead of int.
      */
-    template<typename U>
+    template<typename U> //This defines a generic (template) struct — so we can rebind the allocator to any other type U.
     struct rebind { 
-        using other = AlignedAllocator<U, Alignment>; 
+        using other = AlignedAllocator<U, Alignment>; //This tells the STL: If you want to rebind this allocator to type U, then use AlignedAllocator<U, Alignment>.
     };
 
     /**
