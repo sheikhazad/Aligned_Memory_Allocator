@@ -20,7 +20,7 @@ Cache-line aligned allocator to prevent false sharing
 
 ### Important Notes:
 1. **No `alignas` Needed**:
-   - As discussed earlier, you don't need to use `alignas` with the allocator itself or its allocations. The alignment is handled internally.
+   - No need to use `alignas` with the allocator itself or its allocations. The alignment is handled internally.
 
 2. **Interoperability**:
    - Your allocator works with all STL containers (`vector`, `list`, `map`, etc.).
