@@ -72,7 +72,7 @@ int main() {
       alloc.deallocate(arr, 100);  // Deallocation
 
 
-    //2. For raw allocations, destructor must be manually called if needed:
+    //2. For raw allocations with user defined class, destructor must be manually called if needed:
     AlignedAllocator<MyClass> alloc;
     MyClass* objs = alloc.allocate(10);
 
