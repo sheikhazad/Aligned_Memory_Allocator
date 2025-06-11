@@ -32,7 +32,7 @@ Cache-line aligned allocator to prevent false sharing
 
 4. **Destruction**:
    - For containers, objects are properly destroyed before deallocation.
-   - For raw allocations, you must manually call destructors if needed:
+   - For raw allocations, destructor must be manually called if needed:
      ```cpp
      AlignedAllocator<MyClass> alloc;
      MyClass* objs = alloc.allocate(10);
