@@ -26,7 +26,7 @@
     #define hardware_destructive_interference_size 64  // Fallback to 64 bytes
 #endif
 
-constexpr size_t CACHE_LINE_SIZE = hardware_destructive_interference_size;
+constexpr static size_t CACHE_LINE_SIZE = hardware_destructive_interference_size;
 
 // ========== AlignedAllocator ========== //
 /**
